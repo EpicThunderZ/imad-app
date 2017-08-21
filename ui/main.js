@@ -15,13 +15,14 @@ img.onclick = function () {
 };
 */
 //Counter Code
-var button = document.getElementById("Counter");
+var button = document.getElementById("counter");
 var counter=0;
 button.onclick = function () {
     //Make a request to the counter endpoint
+    
     // Capture the respones and store it in a variaable
     //Render the variable in the correct span
     counter++;
-    var span=document.getElementById("Count");
+    var span=document.getElementById("count");
     span.innerHTML = counter.toString();
 }
