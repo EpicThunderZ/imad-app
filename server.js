@@ -5,13 +5,27 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var ArticleOne = {
+var articles= {
+    'article-one' : {
     title: 'Article One | Janak Shah',
     heading: 'Article One',
     date: 'Aug 21 2017',
     content: `<p>This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.</p>
             <p>This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.</p>
             <p>This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.</p>`
+},
+    'article-two' : {
+        title: 'Article Two | Janak Shah',
+    heading: 'Article Two',
+    date: 'Aug 21 2017',
+    content: `<p>This is the content for my second article</p>`
+    },
+    'article-three' : {
+        title: 'Article Three | Janak Shah',
+    heading: 'Article Three',
+    date: 'Aug 21 2017',
+    content: `<p>This is the content for my third article</p>`
+    }
 };
 function createTemplate (data) {
     var title=data.title;
@@ -52,21 +66,16 @@ var HTMLtemplate=
 `;
 return HTMLtemplate;
 }
+
 app.get('/', function (req, res) {
-  res.send(createTemplate(ArticleOne));
+  res.sendFile(path.join(__dirname, 'i', 'index.html'))
 });
 
-app.get('/article-one',function (req, res) {
-    res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+app.get('/:articleName',function (req, res) {
+    var articleName=rec.params.articleName
+    res.send(createTemplate(articles[articleName]));
 });
 
-app.get('/article-two',function (req, res) {
-    res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
-
-app.get('/article-three',function (req, res) {
-    res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
-});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
