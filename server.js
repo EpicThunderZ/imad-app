@@ -50,7 +50,7 @@ var HTMLtemplate=
     </body>
 </html>
 `;
-return HTMLTemplate;
+return HTMLtemplate;
 }
 app.get('/', function (req, res) {
   res.send(createTemplate(ArticleOne));
