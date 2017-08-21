@@ -68,7 +68,7 @@ return HTMLtemplate;
 }
 
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'i', 'index.html'))
+  res.sendFile(path.join(__dirname, 'i', 'index.html'));
 });
 
 app.get('/:articleName',function (req, res) {
