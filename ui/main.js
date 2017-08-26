@@ -15,26 +15,11 @@ img.onclick = function () {
 };
 */
 //Counter Code
-
 var button = document.getElementById("counter");
-var counter=0;
-button.onclick = function () {
-    //Make a request to the counter endpoint
+button.onclick = function() {
     counter++;
-    var request = new XMLHttpRequest();
-    // Capture the respones and store it in a variaable
-    request.onreadystatechange = function() {
-        if(request.readyState === XMLHttpRequest.DONE) {
-            //tAKE ACTION
-        
-            if(request.status === 200) {
-               var counter = request.responseText;
-               var span=document.getElementById("count");
-               span.innerHTML = counter.toString();
-            }
-        }
-    };
-    //Make the request
-    request.open('GET', 'http://janak31415et.imad.hasura.io/counter', true);    
-    request.send(null);
-};    
+    var span=document.getElementById("count");
+    span.innerHTML = counter.toString();
+    
+};
+    
