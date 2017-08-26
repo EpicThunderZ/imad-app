@@ -5,6 +5,7 @@ button.onclick = function() {
     
     //Create a request objeact
     var request = new XMLHttpRequest();
+    console.log('clicked');
 
     //Capture the response and store it in a variable
     request.onreadystatechange = function() {
@@ -22,4 +23,3 @@ button.onclick = function() {
     request.open('GET', 'http://janak31415et.imad.hasura-app.io/counter', true);
     request.send(null);
 };
-    
