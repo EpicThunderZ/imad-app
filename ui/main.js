@@ -31,7 +31,7 @@ button.onclick = function() {
             }
         }
         
-    }
+    };
     
     //Make the request
     request.open('GET', 'http://janak31415et.imad.hasura-app.io/counter', true);
