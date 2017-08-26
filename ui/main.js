@@ -13,7 +13,7 @@ function moveRight () {
 img.onclick = function () {
     var interval = setInterval(moveRight, 50);
 };
-*/
+
 //Counter Code
 var button = document.getElementById("counter");
 var counter=0;
@@ -35,4 +35,4 @@ button.onclick = function () {
     //Make the request
     request.open('GET', 'http://janak31415et.imad.hasura.io/counter', true);    
     request.send(null);
-};    
+};    */
