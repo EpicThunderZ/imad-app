@@ -80,8 +80,8 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 }); 
 
+var pool = new Pool(config);
 app.get('/test-db', function(req,res) {
-    var pool = new Pool(config);
     pool.query('SELECT * FROM test', function(err, result) {
         if(err) {
             res.status(500).send(err.toString());
