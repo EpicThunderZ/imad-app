@@ -15,7 +15,7 @@ var app = express();
 app.use(morgan('combined'));
 
 var articles= {
-    'article-one' : {
+    'Article-one' : {
     title: 'Article One | Janak Shah',
     heading: 'Article One',
     date: 'Aug 21 2017',
@@ -23,13 +23,13 @@ var articles= {
             <p>This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.</p>
             <p>This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.</p>`
 },
-    'article-two' : {
+    'Article-two' : {
         title: 'Article Two | Janak Shah',
     heading: 'Article Two',
     date: 'Aug 21 2017',
     content: `<p>This is the content for my second article</p>`
     },
-    'article-three' : {
+    'Article-three' : {
         title: 'Article Three | Janak Shah',
     heading: 'Article Three',
     date: 'Aug 21 2017',
@@ -108,11 +108,11 @@ app.get('/submit-name', function(req,res) {
     res.send(JSON.stringify(names));
 });
 
-app.get('/articles/:articleName',function (req, res) {
+app.get('/articles/:ArticleName',function (req, res) {
     
     
     
-    pool.query("SELECT * FROM article WHERE title = '"+ req.params.articleName + "'", function(err, result) {
+    pool.query("SELECT * FROM article WHERE title = '"+ req.params.ArticleName + "'", function(err, result) {
         if(err) {
             res.status(500).send(err.toString());
         }
