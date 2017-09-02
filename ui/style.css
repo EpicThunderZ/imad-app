@@ -1,6 +1,5 @@
 body {
     font-family: sans-serif;
-    background-color: lightgrey;
     margin-top: 75px;
 }
 
@@ -22,10 +21,9 @@ body {
 .container {
                 max-width:800px;
                 margin: 0 auto;
-                color: grey;
                 font-family: sans-serif;
             }
-.container  h{
+.container  h3{
     color: black;
 }
 
