@@ -111,11 +111,9 @@ app.post('/login', function(req, res) {
                      res.send(400).send('Username/Password is invalid');
                  }
             }
-            }
-            
         }
+           
     });
-    
 });
 
 var pool = new Pool(config);
