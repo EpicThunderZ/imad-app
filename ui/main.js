@@ -80,6 +80,9 @@ submit.onclick = function () {
             if(request.status === 200) {
                console.log('User logged on.');
                alert('Logged in successfully.');
+               var FormCont=document.getElementById('Form').innerHTML;
+                FormCont='<a href="/logout">Logout</a>';
+    
             } else if(request.status === 400 || request.status===403) {
                 console.log('Credentials entered are wrong');
                 alert('Username/password is incorrect.');
@@ -99,7 +102,6 @@ submit.onclick = function () {
     request.setRequestHeader('Content-Type', 'application/json');
     request.send(JSON.stringify({username: username, password: password}));
     //Make a request to the server and send the name
-    
     
 
     };
