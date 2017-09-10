@@ -134,7 +134,7 @@ reg.onclick = function () {
     console.log(Rpassword);
     request.open('POST', 'http://janak31415et.imad.hasura-app.io/create-user', true);
     request.setRequestHeader('Content-Type', 'application/json');
-    request.send(JSON.stringify({username: username, password: password}));
+    request.send(JSON.stringify({username: Rusername, password: Rpassword}));
     //Make a request to the server and send the name
     
     
