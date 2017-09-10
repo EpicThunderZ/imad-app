@@ -80,7 +80,7 @@ submit.onclick = function () {
             if(request.status === 200) {
                console.log('User logged on.');
                alert('Logged in successfully.');
-            } else if(request.status === 400) {
+            } else if(request.status === 400 || request.status===403) {
                 console.log('Credentials entered are wrong');
                 alert('Username/password is incorrect.');
             } else if(request.status === 500) {
