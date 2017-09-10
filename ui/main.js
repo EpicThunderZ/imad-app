@@ -92,7 +92,7 @@ submit.onclick = function () {
             if(request.status === 200) {
                console.log('User logged on.');
                alert('Logged in successfully.');
-                loginHTML='<a href="/logout">Logout</a>';
+                loginHtml='<a href="/logout">Logout</a>';
     
             } else if(request.status === 400 || request.status===403) {
                 console.log('Credentials entered are wrong');
