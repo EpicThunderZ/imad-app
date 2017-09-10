@@ -103,3 +103,40 @@ submit.onclick = function () {
     
 
     };
+    
+var reg = document.getElementById("register_btn");
+reg.onclick = function () {
+    //Create a request object
+    var request = new XMLHttpRequest();
+    console.log('clicked reg');
+
+    //Capture the response and store it in a variable
+    request.onreadystatechange = function() {
+        if(request.readyState === XMLHttpRequest.DONE) {
+            //Take some action
+            if(request.status === 200) {
+               console.log('User Created.');
+               alert('User Created.');
+            } else if(request.status === 400 || request.status===403) {
+                console.log('Credentials entered are already taken');
+                alert('Username/password is taken already.');
+            } else if(request.status === 500) {
+                alert('Something went wrong on the server.');
+            }
+        }
+        //Not Done Yet
+    };
+    
+    //Make the request
+    var Rusername = document.getElementById("username").value;
+    var Rpassword = document.getElementById("password").value;
+    console.log(Rusername);
+    console.log(Rpassword);
+    request.open('POST', 'http://janak31415et.imad.hasura-app.io/create-user', true);
+    request.setRequestHeader('Content-Type', 'application/json');
+    request.send(JSON.stringify({username: username, password: password}));
+    //Make a request to the server and send the name
+    
+    
+
+    };
