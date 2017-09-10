@@ -118,10 +118,10 @@ reg.onclick = function () {
                console.log('User Created.');
                alert('User Created.');
             } else if(request.status === 400 || request.status===403) {
-                console.log('Credentials entered are already taken');
-                alert('Username/password is taken already.');
+                console.log('400 OR 403 ERROR');
+                alert('400 OR 403 ERROR');
             } else if(request.status === 500) {
-                alert('Something went wrong on the server.');
+                alert('The username/password entered is already in use.');
             }
         }
         //Not Done Yet
