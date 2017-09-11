@@ -86,20 +86,20 @@ submit.onclick = function () {
     console.log('clicked');
 
     //Capture the response and store it in a variable
-    request.onreadystatechange = function() {
-        if(request.readyState === XMLHttpRequest.DONE) {
-            //Take some action
-            if(request.status === 200) {
-               console.log('User logged on.');
-               alert('Logged in successfully.');
-              
-    
-            } else if(request.status === 400 || request.status===403) {
-                console.log('Credentials entered are wrong');
-                alert('Username/password is incorrect.');
-            } else if(request.status === 500) {
-                alert('Something went wrong on the server.');
-            }
+     request.onreadystatechange = function () {
+          if (request.readyState === XMLHttpRequest.DONE) {
+              // Take some action
+              if (request.status === 200) {
+                  submit.value = 'Success!';
+              } else if (request.status === 403) {
+                  submit.value = 'Invalid credentials. Try again?';
+              } else if (request.status === 500) {
+                  alert('Something went wrong on the server');
+                  submit.value = 'Login';
+              } else {
+                  alert('Something went wrong on the server');
+                  submit.value = 'Login';
+              }
             loadLogin();
         }
         //Not Done Yet
