@@ -154,6 +154,7 @@ reg.onclick = function () {
 
 }
 
+
 function loadLoggedInUser (username) {
     var loginArea = document.getElementById('login_area');
     loginArea.innerHTML = `
@@ -161,7 +162,6 @@ function loadLoggedInUser (username) {
         <a href="/logout">Logout</a>
     `;
 }
-
 
 function loadLogin () {
     // Check if the user is already logged in
@@ -175,9 +175,8 @@ function loadLogin () {
             }
         }
     };
-
-     request.open('GET', '/check-login', true);
+    
+    request.open('GET', '/check-login', true);
     request.send(null);
-        //Not Done Yet
 }
 loadLogin();
