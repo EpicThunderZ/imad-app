@@ -92,7 +92,7 @@ submit.onclick = function () {
             if(request.status === 200) {
                console.log('User logged on.');
                alert('Logged in successfully.');
-                loginHtml='<a href="/logout">Logout</a>';
+              
     
             } else if(request.status === 400 || request.status===403) {
                 console.log('Credentials entered are wrong');
@@ -100,6 +100,7 @@ submit.onclick = function () {
             } else if(request.status === 500) {
                 alert('Something went wrong on the server.');
             }
+            loadLogin();
         }
         //Not Done Yet
     };
@@ -126,18 +127,16 @@ reg.onclick = function () {
 
     //Capture the response and store it in a variable
     request.onreadystatechange = function() {
-        if(request.readyState === XMLHttpRequest.DONE) {
-            //Take some action
-            if(request.status === 200) {
-               console.log('User Created.');
-               alert('User Created.');
-            } else if(request.status === 400 || request.status===403) {
-                console.log('400 OR 403 ERROR');
-                alert('400 OR 403 ERROR');
-            } else if(request.status === 500) {
-                alert('The username/password entered is already in use.');
-            }
-        }
+         if (request.readyState === XMLHttpRequest.DONE) {
+              // Take some action
+              if (request.status === 200) {
+                  alert('User created successfully');
+                  register.value = 'Registered!';
+              } else {
+                  alert('Could not register the user');
+                  register.value = 'Register';
+              }
+          }
         //Not Done Yet
     };
     
