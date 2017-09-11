@@ -66,7 +66,7 @@ var name = nameInput.value;
 
     };
 */
-
+var loadLoginForm=function() {
     var loginHtml = `
         <h3>Login/Register to unlock awesome features</h3>
         <input type="text" id="username" placeholder="username" />
@@ -116,6 +116,7 @@ submit.onclick = function () {
     
 
     };
+
     
 var reg = document.getElementById("register_btn");
 reg.onclick = function () {
@@ -150,6 +151,33 @@ reg.onclick = function () {
     request.send(JSON.stringify({username: Rusername, password: Rpassword}));
     //Make a request to the server and send the name
     
+    };    
+
+};
+
+function loadLoggedInUser (username) {
+    var loginArea = document.getElementById('login_area');
+    loginArea.innerHTML = `
+        <h3> Hi <i>${username}</i></h3>
+        <a href="/logout">Logout</a>
+    `;
+}
+
+
+function loadLogin () {
+     var request = new XMLHttpRequest();
     
 
+    //Capture the response and store it in a variable
+    request.onreadystatechange = function() {
+        if(request.readyState === XMLHttpRequest.DONE) {
+            //Take some action
+            if(request.status === 200) {
+               loadLoggedInUser(this.responseText);
+            } else {
+                loadLoggedInUser();
+            }
+        }
     };
+        //Not Done Yet
+}
