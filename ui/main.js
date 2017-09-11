@@ -66,7 +66,7 @@ var name = nameInput.value;
 
     };
 */
-var loadLoginForm=function() {
+function loadLoginForm() {
     var loginHtml = `
         <h3>Login/Register to unlock awesome features</h3>
         <input type="text" id="username" placeholder="username" />
@@ -153,7 +153,7 @@ reg.onclick = function () {
     
     };    
 
-};
+}
 
 function loadLoggedInUser (username) {
     var loginArea = document.getElementById('login_area');
