@@ -172,9 +172,11 @@ function loadLogin () {
         if(request.readyState === XMLHttpRequest.DONE) {
             //Take some action
             if(request.status === 200) {
+                loadLoginForm();
                loadLoggedInUser(this.responseText);
             } else {
-                loadLoginForm();
+                
+               loadLoggedInUser(this.responseText);
             }
         }
     };
