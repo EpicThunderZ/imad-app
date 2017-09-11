@@ -105,14 +105,14 @@ submit.onclick = function () {
         //Not Done Yet
     };
     
-    //Make the request
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
-    console.log(username);
-    console.log(password);
-    request.open('POST', 'http://janak31415et.imad.hasura-app.io/login', true);
-    request.setRequestHeader('Content-Type', 'application/json');
-    request.send(JSON.stringify({username: username, password: password}));
+    //Make the request     var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        console.log(username);
+        console.log(password);
+        request.open('POST', '/login', true);
+        request.setRequestHeader('Content-Type', 'application/json');
+        request.send(JSON.stringify({username: username, password: password}));  
+        submit.value = 'Logging in...';
     //Make a request to the server and send the name
     
 
@@ -141,14 +141,14 @@ reg.onclick = function () {
     };
     
     //Make the request
-    var Rusername = document.getElementById("username").value;
-    var Rpassword = document.getElementById("password").value;
-    console.log(Rusername);
-    console.log(Rpassword);
-    request.open('POST', 'http://janak31415et.imad.hasura-app.io/create-user', true);
-    request.setRequestHeader('Content-Type', 'application/json');
-    request.send(JSON.stringify({username: Rusername, password: Rpassword}));
-    //Make a request to the server and send the name
+    var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        console.log(username);
+        console.log(password);
+        request.open('POST', '/create-user', true);
+        request.setRequestHeader('Content-Type', 'application/json');
+        request.send(JSON.stringify({username: username, password: password}));  
+        register.value = 'Registering...';
     
     };    
 
