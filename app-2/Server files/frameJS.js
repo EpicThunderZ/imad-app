@@ -20,7 +20,7 @@ var articles= {
     heading:'Planets',
     content:'Planets'
   }
-}
+};
 
 function createTemplate(data) {
 var heading= data.heading;
