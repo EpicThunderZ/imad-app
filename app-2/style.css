@@ -1,0 +1,37 @@
+body{
+background-color:maroon;
+}
+a{
+text-decoration: none;
+}
+a{
+background-color: maroon;
+color: brown;
+font-size:30px;
+font-family: Cursive;
+}
+a:hover, h3:hover{
+    background-color: brown;
+	color: maroon;
+width: 100%;
+}
+a:hover ~ body, h3:hover { 
+
+    background-color: brown;
+	color: maroon;
+
+
+}
+a:active~body, h3:active{
+border: 10px ridge brown;
+    background-color: maroon;
+	color: brown;
+font-size: 30px;
+position: relative;
+top: -10px;
+right: 10px;
+width: 100%;
+}
+
+
+

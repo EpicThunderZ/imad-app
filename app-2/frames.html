@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<style>
+
+</style>
+</head>
+<frameset rows="20%,*" border="6" bordercolor="brown">
+<frame src="HEAD.HTML" name="top_full_Head" scrolling="no">
+
+
+<frameset rows="10%,*" border="6" bordercolor="brown">
+<frame src="As.HTML" name="a1" scrolling="NO">
+<!--
+<frame src="AB.HTML" name="a2" scrolling="NO">
+<frame src="AC.HTML" name="a3" scrolling="NO">
+<frame src="AD.HTML" name="a4" scrolling="NO">
+-->
+
+<frameset rows="" cols="80%,20%" border="5" bordercolor="brown">
+<frame src="Server files/ui/CONTENT.HTML" name="MainWindow" scrolling="no">
+<frame src="CONTENTindex.HTML"  name="index" scrolling="no">
+<script>
+var port = 8080;
+app.listen(port, function () {
+  console.log(`App listening on port ${port}!`);
+});
+
+</script>
+</html>
