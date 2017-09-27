@@ -272,7 +272,7 @@ app.listen(port, function () {
   `;
   return HTMLtemplate;
   }
-  app.get('/articles/:ArticleName',function (req, res) {
+  app.get('/articles/:articleName',function (req, res) {
     res.send(createTemplate(articles(articleName)));
   });
   app.get('/', function (req, res) {
