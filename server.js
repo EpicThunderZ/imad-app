@@ -258,7 +258,7 @@ app.listen(port, function () {
           <link href="/ui/style.css" rel="stylesheet"/>
 
       </head>
-      <body>
+      <body background='https://ak6.picdn.net/shutterstock/videos/5498786/thumb/1.jpg?i10c=img'>
           <div class="container">
           <div>
              <a href="/">Home</a>
