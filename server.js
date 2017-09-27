@@ -226,11 +226,11 @@ app.listen(port, function () {
 
   var articles= {
     'article-one': {
-      heading:'Planets',
-      content:'Planets'
+      heading:'HOME',
+      content:''
     },
     'article-two': {
-      heading:'Planets',
+      heading:'Sun',
       content:'Planets'
     },
     'article-three': {
@@ -238,7 +238,7 @@ app.listen(port, function () {
       content:'Planets'
     },
     'article-four': {
-      heading:'Planets',
+      heading:'Dwarf Planets',
       content:'Planets'
     }
   };
