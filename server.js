@@ -240,6 +240,10 @@ app.listen(port, function () {
     'article-four': {
       heading:'Dwarf Planets',
       content:'Planets'
+    },
+    'article-five': {
+      heading:'Asteroid Belt',
+      content:'Planets'
     }
   };
 
