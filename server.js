@@ -227,11 +227,11 @@ app.listen(port, function () {
   var articles= {
     'article-one': {
       heading:'HOME',
-      content:''
+      content:'Home'
     },
     'article-two': {
       heading:'Sun',
-      content:'Planets'
+      content:'Sun'
     },
     'article-three': {
       heading:'Planets',
@@ -239,11 +239,11 @@ app.listen(port, function () {
     },
     'article-four': {
       heading:'Dwarf Planets',
-      content:'Planets'
+      content:'Dwarf Planets'
     },
     'article-five': {
       heading:'Asteroid Belt',
-      content:'Planets'
+      content:'Asteroid Belt'
     }
   };
 
@@ -267,7 +267,7 @@ app.listen(port, function () {
           <h3>
               ${heading}
           </h3>
-          <div>
+          <div id="content">
               ${content}
           </div>
           </div>
@@ -284,6 +284,14 @@ app.get('/:articleName',function (req, res) {
     var articleName = req.params.articleName;
     res.send(createTemplate(articles[articleName]));
   });
+  app.get('/ui/style.css', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'style.css'));
+});
+
+app.get('/ui/main.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'main.js'));
+});
+
   var port = 80;
   app.listen(port, function () {
     console.log(`App listening on port ${port}!`);
