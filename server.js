@@ -230,19 +230,19 @@ app.listen(port, function () {
       content:'Home'
     },
     'article-two': {
-      heading:'Sun',
+      heading:'SUN',
       content:'Sun'
     },
     'article-three': {
-      heading:'Planets',
+      heading:'PLANETS',
       content:'Planets'
     },
     'article-four': {
-      heading:'Dwarf Planets',
+      heading:'DWARF PLANETS',
       content:'Dwarf Planets'
     },
     'article-five': {
-      heading:'Asteroid Belt',
+      heading:'ASTEROID BELT',
       content:'Asteroid Belt'
     }
   };
