@@ -75,11 +75,9 @@ function hash (input, salt) {
 app.get('/hash/:input', function(req,res) {
     var hashedString=hash(req.params.input, 'random-string');
     res.send(hashedString);
-    
 });
 
 app.post('/create-user', function(req, res) {
-    
     var username = req.body.username;
     var password = req.body.password;
     var salt = crypto.randomBytes(128).toString('hex');
@@ -116,7 +114,7 @@ app.post('/login', function(req, res) {
                      res.send('Credentials correct');
                  } 
                  else{
-                     res.send(400).send('Username/Password is invalid');
+                     res.send(403).send('Username/Password is invalid');
                  }
             }
         }
