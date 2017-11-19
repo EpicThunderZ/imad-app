@@ -1,4 +1,4 @@
-/*
+
 //Counter code
 var button = document.getElementById('counter');
 button.onclick = function() {
@@ -181,4 +181,3 @@ function loadLogin () {
     request.send(null);
 }
 loadLogin();
-*/
