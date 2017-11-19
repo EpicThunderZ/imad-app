@@ -90,7 +90,7 @@ submit.onclick = function () {
               // Take some action
               if (request.status === 200) {
                   alert('Success!');
-               } else if(request.status===403) {
+               } else if(request.status===403 || request.status===400 ) {
                    alert('Username/Password invalid');
                } else if (request.status===500) {
                    alert('Something went wrong on the server.');
