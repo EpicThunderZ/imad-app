@@ -91,7 +91,7 @@ submit.onclick = function () {
           if (request.readyState === XMLHttpRequest.DONE) {
               // Take some action
               if (request.status === 200) {
-                  login_area.innerHTML='<a href="/logout"><button id="logoutB">Logout</button></a>';
+                  loginArea.innerHTML='<a href="/logout"><button id="logoutB">Logout</button></a>';
                   alert('Success!');
                } else if(request.status===403 || request.status===400 ) {
                    alert('Username/Password invalid');
