@@ -85,13 +85,14 @@ submit.onclick = function () {
     //Create a request object
     var request = new XMLHttpRequest();
     submit.value="Submitting";
+    submit.disabled=true;
     //Capture the response and store it in a variable
      request.onreadystatechange = function () {
           if (request.readyState === XMLHttpRequest.DONE) {
               // Take some action
               if (request.status === 200) {
-                  alert('Success!');
                   login_area.innerHTML='<a href="/logout"><button id="logoutB">Logout</button></a>';
+                  alert('Success!');
                } else if(request.status===403 || request.status===400 ) {
                    alert('Username/Password invalid');
                } else if (request.status===500) {
