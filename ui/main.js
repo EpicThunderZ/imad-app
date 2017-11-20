@@ -79,7 +79,19 @@ function loadLoginForm() {
 */
 
 //Submit username/password to login
-var loginArea=document.getElementById('login_area');
+function loadLoginForm() {
+    var loginHTML=
+    `
+    <H3>Login</H3>
+   <div>
+        <input type="text" id="username" placeholder="username"/>
+        <input type="password" id="password"/>
+        <br>
+        <input type="submit" id="submit_btn"/>
+        <button id="register_btn">Register</button>
+    </div>
+    `;
+}
 var submit = document.getElementById("submit_btn");
 submit.onclick = function () {
     //Create a request object
@@ -108,7 +120,29 @@ submit.onclick = function () {
         request.send(JSON.stringify({username: username, password: password}));  
     };
 
-var loginArea=document.getElementById('login_area');
+function loadLoggedInUser(username) {
+    var loginArea= document.getElementById('login_area');
+    loginArea=
+    `
+    <h3>Hi <i>${username}</i></h3>
+    <a href='/logout'><button>Logout</button></a>
+    `;
+}
+function loadLogin() {
+    new XMLHttpRequest();
+    request.onreadystatechange=function() {
+        if(request.readystate===XMLHttpRequest.DONE) {
+              if (request.status === 200) {
+                  loadLoggedInUser(this.responseText);
+               } else {
+                   loadLoginForm();
+               }
+        }
+    };
+    request.open('POST', 'http://janak31415et.imad.hasura-app.io/check-login', true);
+    request.send(null);  
+}
+
 var register = document.getElementById("register_btn");
 register.onclick = function () {
     //Create a request object
