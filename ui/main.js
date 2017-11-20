@@ -84,14 +84,14 @@ var submit = document.getElementById("submit_btn");
 submit.onclick = function () {
     //Create a request object
     var request = new XMLHttpRequest();
-
+    submit.value="Submitting";
     //Capture the response and store it in a variable
      request.onreadystatechange = function () {
           if (request.readyState === XMLHttpRequest.DONE) {
               // Take some action
               if (request.status === 200) {
                   alert('Success!');
-                  login_area.innerHTML='<button id="logoutB">Logout</button>';
+                  login_area.innerHTML='<a href="janak31415et.imad.hasura-app.io/logout><button id="logoutB">Logout</button></a>';
                } else if(request.status===403 || request.status===400 ) {
                    alert('Username/Password invalid');
                } else if (request.status===500) {
