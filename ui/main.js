@@ -130,19 +130,21 @@ function loadLoggedInUser(username) {
     <a href='/logout'><button>Logout</button></a>
     `;
 }
-function loadLogin() {
-    new XMLHttpRequest();
-    request.onreadystatechange=function() {
-        if(request.readystate===XMLHttpRequest.DONE) {
-              if (request.status === 200) {
-                  loadLoggedInUser(this.responseText);
-               } else {
-                   loadLoginForm();
-               }
+function loadLogin () {
+    // Check if the user is already logged in
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.readyState === XMLHttpRequest.DONE) {
+            if (request.status === 200) {
+                loadLoggedInUser(this.responseText);
+            } else {
+                loadLoginForm();
+            }
         }
     };
-    request.open('POST', 'http://janak31415et.imad.hasura-app.io/check-login', true);
-    request.send(null);  
+    
+    request.open('GET', '/check-login', true);
+    request.send(null);
 }
 
 var register = document.getElementById("register_btn");
