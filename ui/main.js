@@ -107,3 +107,32 @@ submit.onclick = function () {
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({username: username, password: password}));  
     };
+
+var loginArea=document.getElementById('login_area');
+var register = document.getElementById("register_btn");
+register.onclick = function () {
+    //Create a request object
+    var request = new XMLHttpRequest();
+    register.value="registering";
+    register.disabled=true;
+    //Capture the response and store it in a variable
+     request.onreadystatechange = function () {
+          if (request.readyState === XMLHttpRequest.DONE) {
+              // Take some action
+              if (request.status === 200) {
+                  loginArea.innerHTML='<a href="/logout"><button id="logoutB">Logout</button></a>';
+                  alert('User created!');
+               } else if(request.status===403 || request.status===400 ) {
+                   alert('Username/Password already in use');
+               } else if (request.status===500) {
+                   alert('Something went wrong on the server.');
+               }
+            }
+        };
+    
+        var username=document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        request.open('POST', 'http://janak31415et.imad.hasura-app.io/create-user', true);
+        request.setRequestHeader('Content-Type', 'application/json');
+        request.send(JSON.stringify({username: username, password: password}));  
+    };
