@@ -120,7 +120,6 @@ register.onclick = function () {
           if (request.readyState === XMLHttpRequest.DONE) {
               // Take some action
               if (request.status === 200) {
-                  loginArea.innerHTML='<a href="/logout"><button id="logoutB">Logout</button></a>';
                   alert('User created!');
                } else if(request.status===403 || request.status===400 ) {
                    alert('Username/Password already in use');
