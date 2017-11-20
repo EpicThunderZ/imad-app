@@ -107,26 +107,3 @@ submit.onclick = function () {
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({username: username, password: password}));  
     };
-
-  var logout=document.getElementById('logoutB');
-  logout.onclick = function () {
-    //Create a request object
-    var request = new XMLHttpRequest();
-
-    //Capture the response and store it in a variable
-     request.onreadystatechange = function () {
-          if (request.readyState === XMLHttpRequest.DONE) {
-              // Take some action
-              if (request.status === 200) {
-                  alert('Logged out!');
-               } else if(request.status===403 || request.status===400 ) {
-                   alert('Try again');
-               } else if (request.status===500) {
-                   alert('Something went wrong on the server.');
-               }
-            }
-        };
-        request.open('POST', 'http://janak31415et.imad.hasura-app.io/logout', true);
-        request.setRequestHeader('Content-Type', 'application/json');
-        request.send(JSON.stringify({username: username, password: password}));  
-    };
