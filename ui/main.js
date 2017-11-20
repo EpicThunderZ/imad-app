@@ -91,7 +91,7 @@ submit.onclick = function () {
               // Take some action
               if (request.status === 200) {
                   alert('Success!');
-                  login_area.innerHTML='<a href="janak31415et.imad.hasura-app.io/logout><button id="logoutB">Logout</button></a>';
+                  login_area.innerHTML='<a href="janak31415et.imad.hasura-app.io/logout"><button id="logoutB">Logout</button></a>';
                } else if(request.status===403 || request.status===400 ) {
                    alert('Username/Password invalid');
                } else if (request.status===500) {
