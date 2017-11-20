@@ -103,7 +103,8 @@ submit.onclick = function () {
           if (request.readyState === XMLHttpRequest.DONE) {
               // Take some action
               if (request.status === 200) {
-                  loginArea.innerHTML='<a href="/logout"><button id="logoutB">Logout</button></a>';
+                  submit.disabled=false;
+                  submit.value="Submit";
                   alert('Success!');
                } else if(request.status===403 || request.status===400 ) {
                    alert('Username/Password invalid');
@@ -155,6 +156,8 @@ register.onclick = function () {
               // Take some action
               if (request.status === 200) {
                   alert('User created!');
+                  register.disabled=false;
+                    register.value="Register";
                } else if(request.status===403 || request.status===400 ) {
                    alert('Username/Password already in use');
                } else if (request.status===500) {
