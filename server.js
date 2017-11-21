@@ -124,7 +124,7 @@ app.post('/login', function(req, res) {
 app.get('/check-login', function (req, res) {
    if (req.session && req.session.auth && req.session.auth.userId) {
        var id=req.session.auth.userId;
-       res.send("You are logged in: "+pool.query('SELECT username from "user" WHERE id = '+ req.session.auth.userId));
+       res.send("You are logged in: "+(pool.query('SELECT "username" from "user" WHERE "id" = '+ req.session.auth.userId)));
    } else {
        res.status(400).send('You are not logged in');
    }
