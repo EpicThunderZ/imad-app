@@ -108,10 +108,16 @@ submit.onclick = function () {
                   alert('Success!');
                } else if(request.status===403 || request.status===400 ) {
                    alert('Username/Password invalid');
+                   submit.disabled=false;
+                  submit.value="Submit";
                } else if (request.status===500) {
                    alert('Something went wrong on the server.');
+                   submit.disabled=false;
+                  submit.value="Submit";
                } else{
                    alert('Something went wrong on the server.');
+                   submit.disabled=false;
+                  submit.value="Submit";
                }
                loadLogin();
             }
