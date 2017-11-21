@@ -130,12 +130,11 @@ submit.onclick = function () {
         request.send(JSON.stringify({username: username, password: password}));  
     };
 
-function loadLoggedInUser(username) {
-    var loginArea= document.getElementById('login_area');
-    loginArea=
-    `
-    <h3>Hi <i>${username}</i></h3>
-    <a href='/logout'><button>Logout</button></a>
+function loadLoggedInUser (username) {
+    var loginArea = document.getElementById('login_area');
+    loginArea.innerHTML = `
+        <h3> Hi <i>${username}</i></h3>
+        <a href="/logout">Logout</a>
     `;
 }
 function loadLogin () {
