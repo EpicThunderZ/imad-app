@@ -158,20 +158,22 @@ var register = document.getElementById("register_btn");
 register.onclick = function () {
     //Create a request object
     var request = new XMLHttpRequest();
-    register.value="registering";
+    register.value="Registering";
     register.disabled=true;
     //Capture the response and store it in a variable
-     request.onreadystatechange = function () {
+             request.onreadystatechange = function () {
           if (request.readyState === XMLHttpRequest.DONE) {
               // Take some action
               if (request.status === 200) {
-                  alert('User created!');
+                  alert('User created successfully');
+                  register.value = 'Registered!';
                   register.disabled=false;
-                    register.value="Register";
-               } else {
-                   alert('Username/Password already in use or something went wrong on the server');
-               }
-            }
+              } else {
+                  alert('Could not register the user');
+                  register.value = 'Register';
+                register.disabled=false;
+              }
+          }
         };
     
         var username=document.getElementById('username').value;
