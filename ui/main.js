@@ -169,10 +169,8 @@ register.onclick = function () {
                   alert('User created!');
                   register.disabled=false;
                     register.value="Register";
-               } else if(request.status===403 || request.status===400 ) {
-                   alert('Username/Password already in use');
-               } else if (request.status===500) {
-                   alert('Something went wrong on the server.');
+               } else {
+                   alert('Username/Password already in use or something went wrong on the server');
                }
             }
         };
