@@ -123,7 +123,7 @@ app.post('/login', function(req, res) {
 });
 app.get('/check-login', function (req, res) {
    if (req.session && req.session.auth && req.session.auth.userId) {
-       res.send("You are logged in: "+req.session.auth.username);
+       res.send("You are logged in: "+username);
    } else {
        res.status(400).send('You are not logged in');
    }
