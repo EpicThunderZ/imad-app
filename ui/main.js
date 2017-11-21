@@ -110,6 +110,8 @@ submit.onclick = function () {
                    alert('Username/Password invalid');
                } else if (request.status===500) {
                    alert('Something went wrong on the server.');
+               } else{
+                   alert('Something went wrong on the server.');
                }
                loadLogin();
             }
