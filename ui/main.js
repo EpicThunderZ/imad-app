@@ -92,6 +92,8 @@ function loadLoginForm() {
     </div>
     `;
 }
+
+loadLogin();
 var submit = document.getElementById("submit_btn");
 submit.onclick = function () {
     //Create a request object
@@ -184,4 +186,3 @@ register.onclick = function () {
         request.send(JSON.stringify({username: username, password: password}));  
     };
 
-loadLogin();
