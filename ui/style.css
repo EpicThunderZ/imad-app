@@ -1,7 +1,6 @@
 body {
     font-family: sans-serif;
-    margin-top: 75px;
-    padding: 100px;
+    margin-top: 60px;
 }
 
 .center {
@@ -19,22 +18,29 @@ body {
 .img-medium {
     height: 200px;
 }
+
 .container {
-                max-width:800px;
-                margin: 0 auto;
-                font-family: sans-serif;
-            }
-/*
-.container h3{
-    color: black;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #4a4a4a;
+    font-family: sans-serif;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
-
-
-body{
-    background-image: url('https://ak6.picdn.net/shutterstock/videos/5498786/thumb/1.jpg?i10c=img');
+.comment {
+    margin-left: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
 }
-#content {
-    color: white;
+
+.commenter {
+    font-style: italic;
+    font-size: 0.8em;
 }
-*/
+
+#comment_form {
+    margin-left: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
