@@ -7,11 +7,11 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 
 var pool = mysql.createConnection({
-    user: 'EpicThunder',
-    host: 'localhost',
-    database: 'blog_app',
+    user: 'janak31415et',
+    host: '	localhost:5432',
+    database: 'janak31415et',
     port: '3306',
-    password: 'youngDB'
+    password: 'db-janak31415et-30895'
 });
 
 var app = express();
