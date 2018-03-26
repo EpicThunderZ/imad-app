@@ -1,18 +1,18 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-var mysql=require('mysql');
+var Pool = require('pg').Pool;
 var crypto = require('crypto');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
-var pool = mysql.createConnection({
+var config = {
     user: 'janak31415et',
-    host: '	localhost:5432',
     database: 'janak31415et',
-    port: '3306',
-    password: 'db-janak31415et-30895'
-});
+    host: 'db.imad.hasura-app.io/',
+    port: '5432',
+    password: 'db-janak31415et-88323'
+};
 
 var app = express();
 app.use(morgan('combined'));
